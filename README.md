@@ -1,4 +1,4 @@
-# Pacote de operações de um ArvoreBinaria 
+# Pacote de operações de uma ArvoreBinaria 
 
 Um simples pacote com operações de um Binary Tree
 
