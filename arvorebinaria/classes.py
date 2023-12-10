@@ -1,4 +1,6 @@
-import numpy as np
+#  Importando as bibliotecas necessárias
+
+import numpy as np # Para calcular a altura da árvore
 
 def retirar_nulos_final(lst: list) -> list:
     """Função auxiliar para a função  build_max_heap e to_array
@@ -24,14 +26,15 @@ def retirar_nulos_final(lst: list) -> list:
     return sublista
 
  
-def getcol(h) -> int:
-    """funçõa 
+def getcol(h: int) -> int:
+    """função que determina a quantidade de colunas que vampos 
+    precisar para o print tree
 
     Args:
         h (_type_): _description_
 
     Returns:
-        _type_: _description_
+        _int_: número de colunas 
     """
     if h == 1:
         return 1
@@ -91,12 +94,6 @@ class ArvoreBinaria:
                 self.to_array_object()[i].heapify()
         
 
-        # for j in range(len(self.to_array())):
-        #     if self.to_array()[j] is None:
-        #         pass
-        #     else:
-        #         self.to_array()[j] = self.to_array_object()[j].valor
-        
         return self.to_array
     
     def altura(self) -> int:
@@ -113,16 +110,16 @@ class ArvoreBinaria:
         """_summary_
 
         Args:
-            M (list): _description_
-            root (float): _description_
-            col (int): _description_
-            row (int): _description_
-            height (int): _description_
+            M (list): Matriz com os elementos que serão apresentados no print_tree
+            root (float): valor do nó
+            col (int): número de colunas
+            row (int): número de linhas
+            height (int): altura da árvore
         """
         if root is None:
             return
         
-        M[row][col] = root.valor
+        M[row][col] = root.valor # Determiando o valor do elemento da matriz 
         self.print_tree_aux(M, root.filha_esquerda, col-pow(2, height-2), row+1, height-1)
         self.print_tree_aux(M, root.filha_direita, col+pow(2, height-2), row+1, height-1)
  
@@ -141,7 +138,7 @@ class ArvoreBinaria:
         for i in M:
             for j in i:
                 if j == 0:
-                    print(" ", end=" ")
+                    print(" ", end=" ") # Espaços entre  os nós 
                 else:
                     print(j, end=" ")
             print("")
@@ -242,3 +239,5 @@ def construir_arvore(array) -> ArvoreBinaria:
     arvore = array[0]
     
     return arvore
+
+##This Code is By JaimeWillianCarneiro
