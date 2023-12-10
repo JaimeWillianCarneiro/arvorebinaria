@@ -25,7 +25,7 @@ def retirar_nulos_final(lst: list) -> list:
 
  
 def getcol(h) -> int:
-    """funçõa 
+    """função que retorna a quantidade de colunas que vamos precisar para o print_tree
 
     Args:
         h (_type_): _description_
