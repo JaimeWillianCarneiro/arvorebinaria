@@ -87,7 +87,7 @@ class ArvoreBinaria:
         # Tamanho da lista
         n = len(self.to_array())
         
-        for i in range(n//2, -1, -1):
+        for i in range(n//2, -1, -1): #Começa a partir do último nó não-folha e vai até o primeiro
             if self.to_array_object()[i] is None:
                 pass
             else:
